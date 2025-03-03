@@ -1,0 +1,76 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styling */
+body {
+    background-color: #f9fdff;
+}
+
+/* Header Carousel */
+.carousel-inner img {
+    height: 500px;
+    object-fit: cover; /* Ensures the image covers the area */
+}
+
+/* Education Page Styling */
+.table-container {
+    width: 100%;
+    overflow-x: auto; /* Enables horizontal scrolling */
+} 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    min-width: 600px; 
+}
+th, td {
+    border: 1px solid #0a192fc9;
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: #0a192fc9;
+    font-weight: bold;
+    color: white;
+}
+/* End of Education Styling*/
+
+/* left-content */
+ul li a:hover {
+    font-weight:800
+}
+
+/* Gallery Styling */
+@keyframes marquee {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+.marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+}
+.marquee {
+    display: inline-block;
+    animation: marquee 30s linear infinite;
+}
+  
+.gallery {
+    display: flex;
+    gap: 20px;
+}
+.gallery img {
+    border-radius: 15px;
+    margin-top: 23px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3), 
+            -3px -3px 10px rgba(255, 255, 255, 0.1);
+}
+.gallery img:hover {
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+}
+/* End of Gallery Styling */ 

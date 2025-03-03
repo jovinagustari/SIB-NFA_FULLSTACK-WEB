@@ -6,14 +6,10 @@
     <title>Tugas 6 | RWD Layout | Jovina</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <style>
-        .carousel-inner img {
-            height: 400px; /* Set a fixed height */
-            object-fit: cover; /* Ensures the image covers the area */
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Header -->
     <header class="text-white text-center">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -43,74 +39,73 @@
         </div>
     </header>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary px-3">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="home.html"><img class="img-fluid" style="height: 40px; max-height: 60px;" src="img/logo-nf-academy.png" alt="logo-nfa"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link" href="home.html">Home</a>
-              <a class="nav-link" href="study.html">MyStudy</a>
-              <a class="nav-link active" aria-current="page" href="gallery.html">Gallery</a>
-              <a class="nav-link" href="datatables.html">Datatables</a>
-              <a class="nav-link" href="login.html">Login</a>
-            </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary px-3 shadow-sm">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="home.html"><img class="img-fluid" style="height: 35px; max-height: 60px;" src="img/logo-nf-academy.png" alt="logo-nfa"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" aria-current="page" href="home.html">Home</a>
+            <a class="nav-link" href="study.html">MyStudy</a>
+            <a class="nav-link active fw-bold" href="gallery.html">Gallery</a>
+            <a class="nav-link" href="datatables.html">Datatables</a>
+            <a class="nav-link" href="login.html">Login</a>
           </div>
         </div>
+      </div>
     </nav>
 
-    <div class="container mt-4">
+    <!-- Content -->
+    <div class="container mt-3">
         <div class="row">
-            <div class="col-md-5">
-                <div class="bg-light p-3">
-                    <h2>Recommendations</h2>
+            <div class="col-md-4 mt-sm-3 mb-2">
+                <div class="bg-light p-3 shadow-sm">
+                    <h4>Recommendations</h4>
                     <ul class="list-unstyled">
-                        <li class="text-decoration-none"><a href="#">Nurul Fikri Academy</a></li>
-                        <li class="text-decoration-none"><a href="#">Nurul Fikri Academy</a></li>
-                        <li class="text-decoration-none"><a href="#">Nurul Fikri Academy</a></li>
-                        <li class="text-decoration-none"><a href="#">Nurul Fikri Academy</a></li>
-                        <li class="text-decoration-none"><a href="#">Nurul Fikri Academy</a></li>
+                        <li><a class="text-decoration-none text-secondary" href="https://learn.nfacademy.id/" target="_blank">Nurul Fikri Academy</a></li>
+                        <li><a class="text-decoration-none text-secondary" href="https://www.dicoding.com/" target="_blank">Dicoding Academy</a></li>
+                        <li><a class="text-decoration-none text-secondary" href="https://www.binar.co.id/tags/binar-bootcamp" target="_blank">Binar Academy</a></li>
+                        <li><a class="text-decoration-none text-secondary" href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp</a></li>
+                        <li><a class="text-decoration-none text-secondary" href="https://www.edx.org/learn/computer-science/harvard-university-cs50-s-introduction-to-computer-science" target="_blank">Harvard's CS50x</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="col-md-7">
-                <div class="bg-light p-3">
-                    <div class="main-content">
-                        <main>
-                            <div class="GALLERY">
-                                <h2><center>Gallery Corner</center></h2>
-                                <marquee behavior="scroll" direction="left" scrollamount="10">
-                                    <div class="gallery">
-                                        <img src="https://picsum.photos/600/300?random=1" alt="Image 1">
-                                        <img src="https://picsum.photos/600/300?random=2" alt="Image 2">
-                                        <img src="https://picsum.photos/600/300?random=3" alt="Image 3">
-                                        <img src="https://picsum.photos/600/300?random=4" alt="Image 4">
-                                        <img src="https://picsum.photos/600/300?random=5" alt="Image 5">
-                                    </div>
-                                </marquee>
+            <div class="col-md-8 mt-sm-3">
+                <div class="bg-light p-4 shadow-sm">
+                  <div class="main-content">
+                    <main>
+                      <h3><center>Gallery Corner</center></h3>
+                        <div class="marquee-container">
+                            <div class="gallery marquee">
+                                <img src="https://picsum.photos/600/300?random=1" alt="Image 1">
+                                <img src="https://picsum.photos/600/300?random=2" alt="Image 2">
+                                <img src="https://picsum.photos/600/300?random=3" alt="Image 3">
+                                <img src="https://picsum.photos/600/300?random=4" alt="Image 4">
+                                <img src="https://picsum.photos/600/300?random=5" alt="Image 5">
                             </div>
-                        </main>
-                    </div>
+                        </div>
+                    </main>
+                </div>
                 </div>
             </div>
         </div>
     </div>
-
 
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3 mt-4">
         <div class="footer-content">
             <p>&copy; 2025 by Jovina Gustari in NF Academy</p>
             <p>
-                <a href="www.linkedin.com/in/jovina-juwita-7544ab207" target="_blank"><i class="bi bi-instagram"></i> Linkedin</a> |
-                <a href="https://www.instagram.com/jovinn_j/" target="_blank"><i class="bi bi-linkedin"></i> Instagram</a>
+                <a class="text-decoration-none" href="www.linkedin.com/in/jovina-juwita-7544ab207" target="_blank"><i class="bi bi-instagram"></i> Linkedin</a> |
+                <a class="text-decoration-none" href="https://www.instagram.com/jovinn_j/" target="_blank"><i class="bi bi-linkedin"></i> Instagram</a>
             </p>
         </div>
     </footer>
 
+    <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
 </body>
 </html>
