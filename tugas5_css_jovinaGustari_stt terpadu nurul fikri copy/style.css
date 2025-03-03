@@ -1,18 +1,17 @@
+/* import font family */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
+/* Reset CSS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Global Styling */
 body {
     background-color: #f9fdff;
     font-family: 'Inter', sans-serif;
-}
-
-main {
-    padding: 40px;
 }
 
 /* Header Section Styling */
@@ -23,10 +22,10 @@ header {
     
     color: white;
     text-align: center;
-    display: flex;
+    padding: 40px;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 15%;
 }
 @keyframes gradientAnimation {
     0% {
@@ -60,6 +59,26 @@ header {
 }
 /* End of Header Styling */
 
+
+/* Container & Layout Styling */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.left-column {
+    width: 15%;
+    border-right: #0a192fc9 1px solid;
+}
+.main-content {
+    padding: 10px;
+    width: 70%;
+}
+.right-column {
+    width: 15%;
+    border-left: #0a192fc9 1px solid;
+}
+
 /* Navbar Styling */
 .navbar {
     padding: 20px;
@@ -84,6 +103,40 @@ header {
 }
 /* End of Navbar Styling */
 
+
+/* Left and Right Column Styling */
+fieldset {
+    width: 75%;
+    margin: 30px auto;
+}
+fieldset legend {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.list {
+    list-style-type: none;
+    padding: 10px;
+}
+.list li {
+    margin-bottom: 10px;
+}
+.list li a {
+    text-decoration: none;
+    color: #0a192fc9;
+}
+.list li a:hover {
+    font-weight:800
+}
+/* End of Left and Right Column Styling */
+
+
+/* Main Content Styling */
+main {
+    padding: 40px;
+    height: 65%;
+}
+
 /* Profile Styling */
 .profile div {
     margin-bottom: 20px;
@@ -105,7 +158,8 @@ header {
 }
 /* End of Profile Styling */
 
-/* Education Styling */
+
+/* Education Page Styling */
 table {
     width: 100%;
     margin-top: 20px;
@@ -124,6 +178,7 @@ th {
 }
 /* End of Education Styling*/
 
+
 /* Gallery Styling */
 .gallery {
     display: flex;
@@ -139,45 +194,19 @@ th {
     transform: scale(1.05);
     transition: 0.3s ease-in-out;
 }
-/* End of Gallery Styling */
+/* End of Gallery Styling */     
 
-/* Left and Right Column Styling */
-fieldset {
-    width: 75%;
-    margin: 30px auto;
-}
-
-fieldset legend {
-    font-size: 1rem;
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-.list {
-    list-style-type: none;
-    padding: 10px;
-}
-
-.list li {
-    margin-bottom: 10px;
-}
-
-.list li a {
-    text-decoration: none;
-    color: #0a192fc9;
-}
-
-.list li a:hover {
-    font-weight:800
-}
-/* End of Left and Right Column Styling */
 
 /* Footer Styling */
+footer {
+    padding: 25px;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+    clear: both;
+}
 .footer-content {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 25px;
     font-size: 0.9rem;
     gap: 50px;
 }
@@ -185,7 +214,6 @@ fieldset legend {
     text-decoration: none;
     color: #773df3;
 }
-
 .footer-content a:hover {
     font-weight: bold;
 }
