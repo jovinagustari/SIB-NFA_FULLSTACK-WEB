@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jovina | Tugas 1 | Javascript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container" style="min-height: 100vh;">
+        <div class="d-flex bg-dark justify-content-center align-items-center rounded-2" style="height: 15vh;">
+            <h3 class="text-white m-4">Menghitung luas persegi panjang, segitiga dan persegi</h3>
+        </div>
+        <div class="row d-flex justify-content-center my-5">
+            <div class="col-lg-4 col-sm-12">
+                <div class="card p-4 my-2 w-100 shadow-sm">
+                    <h5 class="text-center">Hitung Luas Persegi Panjang</h5>
+                    <p class="text-center text-secondary">Rumus: panjang x lebar</p>
+                    <div class="mb-3">
+                        <label for="panjang" class="form-label">Panjang:</label>
+                        <input type="number" class="form-control" id="panjang" name="panjang" placeholder="Masukkan panjang" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="lebar" class="form-label">Lebar:</label>
+                        <input type="number" class="form-control" id="lebar" name="lebar" placeholder="Masukkan lebar" required>
+                    </div>
+                    <div class="d-grid">
+                        <button class="btn btn-success mb-2" onclick="luasPersegiPanjang()">Hitung</button>
+                        <button class="btn btn-secondary" onclick="resetPersegiPanjang()">Reset</button>
+                    </div>
+                    <p id="hasilPersegiPanjang" class="mt-2 text-center"></p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+                <div class="card p-4 my-2 w-100 shadow-sm">
+                    <h5 class="text-center">Hitung Luas Segitiga</h5>
+                    <p class="text-center text-secondary">Rumus: 1/2 x alas x tinggi</p>
+                    <div class="mb-3">
+                        <label for="alas" class="form-label">Alas:</label>
+                        <input type="number" class="form-control" id="alas" name="alas" placeholder="Masukkan alas" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="tinggi" class="form-label">Tinggi:</label>
+                        <input type="number" class="form-control" id="tinggi" name="tinggi" placeholder="Masukkan tinggi" required>
+                    </div>
+                    <div class="d-grid">
+                        <button class="btn btn-success mb-2" onclick="luasSegitiga()">Hitung</button>
+                        <button class="btn btn-secondary" onclick="resetSegitiga()">Reset</button>
+                    </div>
+                    <p id="hasilSegitiga" class="mt-2 text-center"></p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+                <div class="card p-4 my-2 w-100 shadow-sm">
+                    <h5 class="text-center">Hitung Luas Persegi</h5>
+                    <p class="text-center text-secondary">Rumus: sisi x sisi</p>
+                    <div class="mb-3">
+                        <label for="sisi" class="form-label">Sisi:</label>
+                        <input type="number" class="form-control" id="sisi" name="sisi" placeholder="Masukkan sisi" required>
+                    </div>
+                    <div class="d-grid">
+                        <button class="btn btn-success mb-2" onclick="luasPersegi()">Hitung</button>
+                        <button class="btn btn-secondary" onclick="resetPersegi()">Reset</button>
+                    </div>
+                    <p id="hasilPersegi" class="mt-2 text-center"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Javascript -->
+    <script>
+
+        // fungsi menghitung luas persegi panjang
+        function luasPersegiPanjang() {
+            // mengambil value dari input field menggunakan getElementById panjang & lebar
+            const panjang = document.getElementById('panjang').value; 
+            const lebar = document.getElementById('lebar').value; 
+
+            // validasi input field, jika input field kosong atau bukan angka positif
+            if (isNaN(panjang) || isNaN(lebar) || panjang <= 0 || lebar <= 0) {
+                document.getElementById('hasilPersegiPanjang').innerText = 'Masukkan panjang dan lebar yang valid (angka positif).';
+                return;
+            }
+
+            const luas = panjang * lebar; // menghitung luas persegi panjang
+            document.getElementById('hasilPersegiPanjang').innerText = 'Luas Persegi Panjang : ' + luas + ' cm2'; // menyisipkan hasil menggunakan innerText
+        }
+
+        // fungsi menghitung luas segitiga
+        function luasSegitiga() {
+            // mengambil value dari input field menggunakan getElementById alas & tinggi
+            const alas = document.getElementById('alas').value; 
+            const tinggi = document.getElementById('tinggi').value; 
+
+            // validasi input field, jika input field kosong atau bukan angka positif
+            if (isNaN(alas) || isNaN(tinggi) || alas <= 0 || tinggi <= 0) {
+                document.getElementById('hasilSegitiga').innerText = 'Masukkan alas dan tinggi yang valid (angka positif).';
+                return;
+            }
+
+            const at = alas * tinggi;
+            const luas = at / 2; // menghitung luas segitiga
+            document.getElementById('hasilSegitiga').innerText = 'Luas Segitiga: ' + luas + ' cm2'; // menyisipkan hasil menggunakan innerText
+        }
+
+        // fungsi menghitung luas persegi
+        function luasPersegi() {
+            // mengambil value dari input field dengan getElementById
+            const sisi = document.getElementById('sisi').value; 
+            const luas = sisi * sisi; // menghitung luas persegi / bujur sangkar
+
+            // validasi input field, jika input field kosong atau bukan angka positif
+            if (isNaN(sisi) || sisi <= 0) {
+                document.getElementById('hasilPersegi').innerText = 'Masukkan sisi yang valid (angka positif).';
+                return;
+            }
+        
+            document.getElementById('hasilPersegi').innerText = 'Luas Persegi: ' + luas + ' cm2'; // menyisipkan hasil menggunakan innerText
+        }
+
+        // fungsi mereset/mengubah value dan hasil menjadi 0 menggunakan getElementById
+        function resetPersegiPanjang() {
+            document.getElementById('panjang').value = 0; 
+            document.getElementById('lebar').value = 0; 
+            document.getElementById('hasilPersegiPanjang').innerText = 'Luas Persegi Panjang : 0 cm2'; 
+        }
+
+        // fungsi mereset/mengubah value dan hasil menjadi 0 menggunakan getElementById
+        function resetSegitiga() {
+            document.getElementById('alas').value = 0; 
+            document.getElementById('tinggi').value = 0; 
+            document.getElementById('hasilSegitiga').innerText = 'Luas Segitiga : 0 cm2';
+        }
+
+        // fungsi mereset/mengubah value dan hasil menjadi 0 menggunakan getElementById
+        function resetPersegi() {
+            document.getElementById('sisi').value = 0; 
+            document.getElementById('hasilPersegi').innerText = 'Luas Persegi : 0 cm2';
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
