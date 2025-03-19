@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fungsi dan Array | JS-ES6</title>
+  </head>
+  <body>
+    <script>
+      // Buat array produkToko dengan 4 objek produk
+      const produkToko = [
+        { id: 1, nama: "Laptop", harga: 7500000, stok: 8 },
+        { id: 2, nama: "Mouse", harga: 170000, stok: 14 },
+        { id: 3, nama: "Keyboard", harga: 360000, stok: 20 },
+        { id: 4, nama: "Headphone", harga: 370000, stok: 11 },
+      ];
+      console.log("List Produk", produkToko);
+
+      // Buat fungsi tambahProduk
+      const tambahProduk = (nama, harga, stok) => {
+        // Validasi nama produk (tidak boleh kosong & harus berupa string)
+        if (typeof nama !== "string" || nama.trim() === "") {
+          console.log("Nama produk harus berupa teks yang valid!");
+          return;
+        }
+
+        // Validasi harga dan stok (harus angka positif)
+        if (typeof harga !== "number" || harga <= 0) {
+          console.log("Harga harus berupa angka positif!");
+          return;
+        }
+        if (typeof stok !== "number" || stok < 0) {
+          console.log("Stok harus berupa angka 0 atau lebih!");
+          return;
+        }
+
+        // Cek apakah produk dengan nama yang sama sudah ada menggunakan some()
+        const produkSudahAda = produkToko.some(
+          (produk) => produk.nama.toLowerCase() === nama.toLowerCase()
+        );
+        if (produkSudahAda) {
+          console.log(`Produk dengan nama "${nama}" sudah ada!`);
+          return;
+        }
+
+        const id = produkToko.length + 1; // ID produk baru adalah panjang array ditambah 1
+        produkToko.push({ id, nama, harga, stok });
+        console.log(`Produk "${nama}" berhasil ditambahkan!`);
+        console.table(produkToko);
+      };
+      tambahProduk("Monitor", 3000000, 7);
+
+      // Buat fungsi hapusProduk
+      const hapusProduk = (id) => {
+        // Cari index/id produk yang akan dihapus
+        const index = produkToko.findIndex((produk) => produk.id === id);
+
+        // Pastikan indeks produk tersedia
+        if (index !== -1) {
+          produkToko.splice(index, 1); // Hapus produk/index hanya 1 saja
+
+          // Reset ID agar tetap berurutan
+          produkToko.forEach((produk, index) => {
+            produk.id = index + 1; //karena index dalam array dimulai dari 0, sedangkan ID harus mulai dari 1.
+          });
+
+          console.log(`Produk berhasil dihapus!`);
+          console.log("List Produk", produkToko);
+        } else {
+          console.log("Produk tidak ditemukan");
+        }
+      };
+      hapusProduk(2);
+
+      const tampilkanProduk = () => {
+        // Tampilkan produk yang tersedia menggunakan forEach()
+        produkToko.forEach((produk) => {
+          console.log(
+            `ID: ${produk.id}, Nama: ${produk.nama}, Harga: ${produk.harga}, Stok: ${produk.stok}`
+          );
+        });
+      };
+      tampilkanProduk();
+    </script>
+  </body>
+</html>
