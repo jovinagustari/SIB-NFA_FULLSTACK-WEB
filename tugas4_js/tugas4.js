@@ -8,19 +8,19 @@ class Pelanggan {
 
 class ManajemenTransportasi {
     constructor() {
-        this.pelangganList = [];
+        this.listPelanggan = [];
     }
 
     tambahPelanggan(nama, nomorTelepon, kendaraanDisewa) {
         const pelanggan = new Pelanggan(nama, nomorTelepon, kendaraanDisewa);
-        this.pelangganList.push(pelanggan);
+        this.listPelanggan.push(pelanggan);
         this.tampilkanPelanggan();
     }
 
     tampilkanPelanggan() {
         const daftarPelanggan = document.getElementById("daftarPelanggan");
         daftarPelanggan.innerHTML = "";
-        this.pelangganList.forEach(pelanggan => {
+        this.listPelanggan.forEach(pelanggan => {
             const row = `<tr>
                 <td>${pelanggan.nama}</td>
                 <td>${pelanggan.nomorTelepon}</td>
@@ -32,4 +32,6 @@ class ManajemenTransportasi {
 }
 
 const sistemTransportasi = new ManajemenTransportasi();
-sistemTransportasi.tambahPelanggan("Aldi", "08123456789", "Mobil");
+sistemTransportasi.tambahPelanggan("Aldi", "08123456789", "Bus");
+sistemTransportasi.tambahPelanggan("Jeon", "08126284789", "Motor");
+sistemTransportasi.tambahPelanggan("Jung", "08123292784", "Pesawat");
