@@ -1,4 +1,4 @@
-const ProductList = () => {
+export default function ProductList() {
   return (
     <>
     <main>
@@ -345,5 +345,3 @@ const ProductList = () => {
     </>
   );
 };
-
-export default ProductList;

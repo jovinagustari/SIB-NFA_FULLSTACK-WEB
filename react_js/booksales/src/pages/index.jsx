@@ -1,7 +1,7 @@
-import Hero from '../components/hero'
-import ProductList from '../components/productList'
+import Hero from "../components/shared/Hero";
+import ProductList from "../components/shared/ProductList";
 
-const Home = () => {
+export default function Home() {
   return (
     <>
       <Hero />
@@ -9,5 +9,3 @@ const Home = () => {
     </>
   );
 };
-
-export default Home;

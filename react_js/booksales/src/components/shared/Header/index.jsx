@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
-const Header = () => {
+export default function Header() {
     return (
         <>
             <div className="container">
@@ -13,16 +13,36 @@ const Header = () => {
                     </div>
                     <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                         <li>
-                            <Link to="/" className="nav-link px-2 b-text-brown">Home</Link>
+                            <NavLink
+                                to="/"
+                                className={({ isActive }) => `b-nav-link px-2 b-text-brown ${isActive ? 'active' : ''}`}
+                            >
+                                Home
+                            </NavLink>
                         </li>
                         <li>
-                            <Link to="/books" className="nav-link px-2 b-text-brown">Books</Link>
+                            <NavLink
+                                to="/books"
+                                className={({ isActive }) => `b-nav-link px-2 b-text-brown ${isActive ? 'active' : ''}`}
+                            >
+                                Books
+                            </NavLink>
                         </li>
                         <li>
-                            <Link to="/team" className="nav-link px-2 b-text-brown">Team</Link>
+                            <NavLink
+                                to="/team"
+                                className={({ isActive }) => `b-nav-link px-2 b-text-brown ${isActive ? 'active' : ''}`}
+                            >
+                                Team
+                            </NavLink>
                         </li>
                         <li>
-                            <Link to="/contact" className="nav-link px-2 b-text-brown">Contact</Link>
+                            <NavLink
+                                to="/contact"
+                                className={({ isActive }) => `b-nav-link px-2 b-text-brown ${isActive ? 'active' : ''}`}
+                            >
+                                Contact
+                            </NavLink>
                         </li>
                     </ul>
                     <div className="col-md-3 text-end">
@@ -42,5 +62,3 @@ const Header = () => {
         </>
     );
 };
-
-export default Header;

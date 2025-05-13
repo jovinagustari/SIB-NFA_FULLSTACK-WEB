@@ -1,4 +1,4 @@
-const Team = () => {
+export default function Team() {
   const teamMembers = [
     { name: "Prince Caspian", role: "UI Designer", img: "img/caspian.jpg" },
     { name: "Aslan", role: "Project Manager", img: "img/aslan.jpg" },
@@ -31,5 +31,3 @@ const Team = () => {
     </div>
   );
 };
-
-export default Team;

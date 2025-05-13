@@ -32,6 +32,21 @@
   color: white;
 }
 
+.b-nav-link {
+  text-decoration: none;
+  transition: background-color 0.3s ease, border-radius 0.3s ease;
+}
+
+.b-nav-link:hover {
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+.b-nav-link.active {
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
 .heart-icon i.fa-solid {
   display: none;
 }

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Register = () => {
+export default function Register() {
     return (
         <div className="container">
             <div className="row justify-content-center b-auth-bg p-5">
@@ -35,5 +35,3 @@ const Register = () => {
         </div>
     );
 };
-
-export default Register;

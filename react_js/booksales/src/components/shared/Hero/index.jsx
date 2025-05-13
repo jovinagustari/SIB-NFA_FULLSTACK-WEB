@@ -1,4 +1,4 @@
-const Hero = () => {
+export default function Hero() {
   return (
     <div className="container my-5">
         <div className="row p-2 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
@@ -35,5 +35,3 @@ const Hero = () => {
       </div>
   );
 };
-
-export default Hero;
