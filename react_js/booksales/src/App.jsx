@@ -1,16 +1,17 @@
 import { Routes, Route } from "react-router-dom";
 
-import Header from "./components/shared/Header";
-import Footer from "./components/shared/Footer";
-import Home from "./pages";
-import Books from "./pages/books";
-import Team from "./pages/team";
-import Contact from "./pages/contact";
+import Header from "./Components/Shared/Header";
+import Footer from "./Components/Shared/Footer";
+import Home from "./Pages";
+import Books from "./Pages/Books";
+import BookDetail from "./Pages/Books/BookDetail";
+import Team from "./Pages/Team";
+import Contact from "./Pages/Contact";
 
-import Login from "./pages/auth/login";
-import Register from "./pages/auth/register";
+import Login from "./Pages/Auth/Login";
+import Register from "./Pages/Auth/Register";
 
-import './App.css'
+import './global.css'
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           {/* Main Pages */}
           <Route index element={<Home />} />
           <Route path="/books" element={<Books />} />
+          <Route path="/books/:id" element={<BookDetail />} />
           <Route path="/team" element={<Team />} />
           <Route path="/contact" element={<Contact />} />
 

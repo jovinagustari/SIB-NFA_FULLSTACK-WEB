@@ -1,4 +1,4 @@
-import ProductList from "../../components/shared/ProductList";
+import ProductList from "../../Components/Shared/ProductList";
 
 export default function Books() {
     return (
